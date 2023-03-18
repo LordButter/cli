@@ -9,8 +9,8 @@
 #include <iostream>
 #include <stdlib.h>
 
-#include "exampleConfig.h"
-#include "example.h"
+#include "versionConfig.h"
+#include "Dummy.h"
 
 /*
  * Simple main program that demontrates how access
@@ -27,8 +27,12 @@ int main() {
             << PROJECT_VERSION_TWEAK
             << std::endl;
 
-  // Bring in the dummy class from the example source,
-  // just to show that it is accessible from main.cpp.
-  Dummy d = Dummy();
-  return d.doSomething() ? 0 : -1;
+  {
+    Dummy d = Dummy();
+    if (!d.doSomething()){
+      return -1;
+    }
+  }
+
+
 }
