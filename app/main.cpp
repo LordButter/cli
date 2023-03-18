@@ -12,11 +12,9 @@
 #include "versionConfig.h"
 #include "Dummy.h"
 
-/*
- * Simple main program that demontrates how access
- * CMake definitions (here the version number) from source code.
- */
-int main() {
+#include "Application.h"
+
+int main(int argc, char * argv[]) {
   std::cout << "C++ CLI v"
             << PROJECT_VERSION_MAJOR
             << "."
@@ -34,5 +32,8 @@ int main() {
     }
   }
 
+  Application app{argc, argv};
+  app.run();
 
+  return 0;
 }
